@@ -311,22 +311,140 @@
             gap: 20px;
         }
 
-        .gallery-item {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        .event-card {
+            background: white;
             border-radius: 15px;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3em;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
             transition: all 0.3s;
-            cursor: pointer;
+            position: relative;
         }
 
-        .gallery-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .event-card.locked {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .event-card.locked:hover {
+            transform: none;
+        }
+
+        .event-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .event-header.boda {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .event-type {
+            font-size: 0.8em;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+
+        .event-name {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .event-date {
+            font-size: 0.9em;
+            opacity: 0.95;
+        }
+
+        .event-body {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .event-status {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+
+        .event-status.past {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .event-status.upcoming {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .event-btn {
+            display: inline-block;
+            padding: 10px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+
+        .event-btn.unlocked {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .event-btn.unlocked:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .event-btn.locked {
+            background: #ccc;
+            color: #666;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .lock-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5em;
+            opacity: 0.7;
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 10px 25px;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #667eea;
+            color: white;
         }
 
         /* Contacto */
@@ -494,6 +612,7 @@
             <nav>
                 <a href="#servicios">Servicios</a>
                 <a href="#paquetes">Paquetes</a>
+                <a href="#eventos">Eventos</a>
                 <a href="#contacto">Contacto</a>
             </nav>
         </div>
@@ -628,23 +747,27 @@
         </div>
     </section>
 
-    <!-- Galería Placeholder -->
-    <section class="gallery">
+    <!-- Galería de Eventos -->
+    <section class="gallery" id="eventos">
         <div class="container">
-            <h2 class="section-title">Nuestro Trabajo</h2>
-            <p class="section-subtitle">Capturamos momentos que duran para siempre</p>
+            <h2 class="section-title">Nuestros Eventos</h2>
+            <p class="section-subtitle">Explora las invitaciones de nuestros clientes</p>
 
-            <div class="gallery-grid">
-                <div class="gallery-item">📸</div>
-                <div class="gallery-item">💑</div>
-                <div class="gallery-item">👑</div>
-                <div class="gallery-item">🎥</div>
-                <div class="gallery-item">💍</div>
-                <div class="gallery-item">🎊</div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="XV Años">XV Años</button>
+                <button class="filter-btn" data-filter="Boda">Bodas</button>
+                <button class="filter-btn" data-filter="past">Eventos Pasados</button>
+                <button class="filter-btn" data-filter="upcoming">Próximos</button>
             </div>
 
-            <p style="text-align: center; margin-top: 30px; color: #666;">
-                <em>Galería de fotos reales disponible próximamente</em>
+            <div class="gallery-grid" id="eventsGrid">
+                <!-- Los eventos se cargarán dinámicamente con JavaScript -->
+            </div>
+
+            <p style="text-align: center; margin-top: 30px; color: #666; font-size: 0.9em;">
+                🔒 Las invitaciones se desbloquean automáticamente después de la fecha del evento<br>
+                <em>Total de eventos: <span id="eventCount">0</span></em>
             </p>
         </div>
     </section>
@@ -706,6 +829,109 @@
     </a>
 
     <script>
+        // Datos de eventos
+        const events = [
+            { nombre: "Jadelik", tipo: "XV Años", fecha: "2025-11-16", url: "https://jade.invitados.org" },
+            { nombre: "Mariana y Areli", tipo: "XV Años", fecha: "2025-11-29", url: "https://xv-mariana-arely.invitados.org" },
+            { nombre: "Marco", tipo: "Boda", fecha: "2025-11-08", url: "https://boda-marco.invitados.org" },
+            { nombre: "Alexa y Esmeralda", tipo: "XV Años", fecha: "2025-11-15", url: "https://alexa-esmeralda.invitados.org" },
+            { nombre: "Angel y Said", tipo: "XV Años", fecha: "2026-09-05", url: "https://xv-angel-said.invitados.org" },
+            { nombre: "Camila Espinoza", tipo: "XV Años", fecha: "2026-01-10", url: "https://xv-camila.invitados.org" },
+            { nombre: "Geraldine", tipo: "XV Años", fecha: "2025-12-31", url: "https://xv-geraldine.invitados.org" },
+            { nombre: "Natalia Estevez", tipo: "XV Años", fecha: "2025-12-06", url: "https://natalia-estevez.invitados.org" },
+            { nombre: "Renata Estefania", tipo: "XV Años", fecha: "2026-03-15", url: "https://renata-estefania.invitados.org" },
+            { nombre: "Shelyn Guadalupe", tipo: "XV Años", fecha: "2026-04-25", url: "https://xv-shelyn-guadalupe.invitados.org" },
+            { nombre: "Valentina Rivera", tipo: "XV Años", fecha: "2025-12-06", url: "https://valentina-rivera-olmedo.invitados.org" },
+            { nombre: "Yazmin", tipo: "XV Años", fecha: "2025-11-22", url: "https://xv-yazmin.invitados.org" },
+            { nombre: "Alejandro y Mayra", tipo: "Boda", fecha: "2025-12-13", url: "https://boda-alejandro-mayra.invitados.org" },
+            { nombre: "Francisco y Rossy", tipo: "Boda", fecha: "2025-10-15", url: "https://rossy-francisco.invitados.org" },
+            { nombre: "Juan Manuel y Luz", tipo: "Boda", fecha: "2025-11-22", url: "https://boda-juan-manuel-luz-mariana.invitados.org" },
+            { nombre: "Daniel y Paulina", tipo: "Boda", fecha: "2025-12-19", url: "https://boda-daniel-paulina.invitados.org" },
+            { nombre: "Josefina y David", tipo: "Boda", fecha: "2025-12-19", url: "https://boda-josefina-david.invitados.org" },
+            { nombre: "Ainhoa Alejandra", tipo: "XV Años", fecha: "2025-12-20", url: "https://xv-ainhoa-alejandra.invitados.org" },
+            { nombre: "Alisson Emireth", tipo: "XV Años", fecha: "2025-11-08", url: "https://xv-alisson-emireth.invitados.org" },
+            { nombre: "Ariadna Carolina", tipo: "XV Años", fecha: "2025-12-21", url: "https://xv-ariadna.invitados.org" }
+        ];
+
+        // Función para verificar si el evento ya pasó
+        function isPastEvent(eventDate) {
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            const event = new Date(eventDate);
+            return event < today;
+        }
+
+        // Función para formatear fecha
+        function formatDate(dateString) {
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            const date = new Date(dateString);
+            return date.toLocaleDateString('es-MX', options);
+        }
+
+        // Función para crear tarjeta de evento
+        function createEventCard(event) {
+            const isPast = isPastEvent(event.fecha);
+            const cardClass = isPast ? 'event-card' : 'event-card locked';
+            const headerClass = event.tipo === 'Boda' ? 'event-header boda' : 'event-header';
+            const statusClass = isPast ? 'event-status past' : 'event-status upcoming';
+            const statusText = isPast ? '✓ Evento Realizado' : '🔒 Próximamente';
+            const btnClass = isPast ? 'event-btn unlocked' : 'event-btn locked';
+            const btnText = isPast ? '👁️ Ver Invitación' : '🔒 Bloqueado';
+            const lockIcon = isPast ? '' : '<div class="lock-icon">🔒</div>';
+
+            return `
+                <div class="${cardClass}" data-type="${event.tipo}" data-status="${isPast ? 'past' : 'upcoming'}">
+                    <div class="${headerClass}">
+                        ${lockIcon}
+                        <div class="event-type">${event.tipo}</div>
+                        <div class="event-name">${event.nombre}</div>
+                        <div class="event-date">📅 ${formatDate(event.fecha)}</div>
+                    </div>
+                    <div class="event-body">
+                        <div class="${statusClass}">${statusText}</div>
+                        <a href="${isPast ? event.url : '#'}" class="${btnClass}" ${isPast ? 'target="_blank"' : ''}>
+                            ${btnText}
+                        </a>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Cargar eventos
+        function loadEvents(filter = 'all') {
+            const grid = document.getElementById('eventsGrid');
+            let filteredEvents = events;
+
+            // Aplicar filtro
+            if (filter === 'past') {
+                filteredEvents = events.filter(e => isPastEvent(e.fecha));
+            } else if (filter === 'upcoming') {
+                filteredEvents = events.filter(e => !isPastEvent(e.fecha));
+            } else if (filter !== 'all') {
+                filteredEvents = events.filter(e => e.tipo === filter);
+            }
+
+            // Ordenar por fecha (más recientes primero)
+            filteredEvents.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
+
+            // Renderizar
+            grid.innerHTML = filteredEvents.map(createEventCard).join('');
+            document.getElementById('eventCount').textContent = filteredEvents.length;
+        }
+
+        // Filtros
+        document.addEventListener('DOMContentLoaded', function() {
+            loadEvents();
+
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    loadEvents(this.dataset.filter);
+                });
+            });
+        });
+
         // Show/hide navbar on scroll
         window.addEventListener('scroll', function() {
             const navbar = document.getElementById('navbar');
