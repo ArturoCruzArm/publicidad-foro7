@@ -21,9 +21,53 @@ Material publicitario profesional para **Foro 7 - Fotografía & Video Profesiona
   - Hero con llamado a la acción
   - Servicios detallados
   - Paquetes con precios
-  - Galería (placeholder)
+  - **Galería de Eventos (20 eventos reales)**
+    - Sistema de bloqueo automático por fecha
+    - Filtros dinámicos (Todos, XV Años, Bodas, Pasados, Próximos)
+    - Tarjetas diferenciadas por tipo de evento
+    - Enlaces a invitaciones de clientes
   - Información de contacto
   - Botón flotante de WhatsApp
+
+---
+
+## 🎭 Galería de Eventos Inteligente
+
+La página web incluye una galería dinámica con **20 eventos reales** que se desbloquea automáticamente:
+
+### Características:
+
+1. **Bloqueo Automático por Fecha**
+   - Eventos futuros aparecen con candado 🔒
+   - Invitaciones bloqueadas hasta después del evento
+   - Se desbloquean automáticamente cuando pasa la fecha
+
+2. **Filtros Interactivos**
+   - **Todos:** Muestra los 20 eventos
+   - **XV Años:** Solo quinceañeras (15 eventos)
+   - **Bodas:** Solo bodas (5 eventos)
+   - **Eventos Pasados:** Solo invitaciones desbloqueadas
+   - **Próximos:** Solo eventos futuros bloqueados
+
+3. **Diseño Diferenciado**
+   - 💜 **XV Años:** Degradado morado/azul
+   - 💗 **Bodas:** Degradado rosa/fucsia
+   - ✓ **Evento Realizado:** Etiqueta verde
+   - 🔒 **Próximamente:** Etiqueta amarilla
+
+4. **Eventos Incluidos**
+   - Jadelik, Mariana y Areli, Alexa y Esmeralda
+   - Marco, Juan Manuel y Luz, Alejandro y Mayra
+   - Y 14 eventos más con sus invitaciones reales
+
+### Cómo Funciona:
+
+El sistema verifica la fecha actual del navegador del visitante y compara con la fecha del evento. Si la fecha del evento ya pasó, la invitación se desbloquea automáticamente y el botón "Ver Invitación" se activa.
+
+**Ejemplo:**
+- Hoy es 15 de noviembre de 2025
+- Evento "Marco" fue el 8 de noviembre → ✓ **Desbloqueado**
+- Evento "Mariana y Areli" es el 29 de noviembre → 🔒 **Bloqueado**
 
 ---
 
