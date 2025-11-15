@@ -1,0 +1,17 @@
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Archivos temporales
+*.tmp
+*.bak
+~*
+
+# PDFs generados (opcional - descomenta si no quieres versionar los PDFs)
+# *.pdf

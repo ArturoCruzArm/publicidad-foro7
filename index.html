@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foro 7 - Fotografía & Video Profesional | León, Guanajuato</title>
+    <meta name="description" content="Fotografía y video profesional para bodas y XV años en León, Guanajuato. Servicio de dron 4K, invitaciones web y paquetes personalizados.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+        }
+
+        .logo {
+            font-size: 5em;
+            font-weight: bold;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .logo .number {
+            font-size: 0.7em;
+            vertical-align: super;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-out 0.3s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            animation: fadeIn 1s ease-out 0.6s both;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeIn 1s ease-out 0.9s both;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #667eea;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #667eea;
+            transform: translateY(-3px);
+        }
+
+        /* Sección de Servicios */
+        .services {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 60px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s;
+            border-top: 4px solid #667eea;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .service-card .icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Paquetes */
+        .packages {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .package-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border: 2px solid #667eea;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .package-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            border-color: #764ba2;
+        }
+
+        .package-card.featured {
+            border: 3px solid #ffd700;
+            background: linear-gradient(135deg, #fffef0 0%, #ffffff 100%);
+        }
+
+        .package-card.featured::before {
+            background: linear-gradient(90deg, #ffd700 0%, #ffed4e 100%);
+            height: 8px;
+        }
+
+        .package-badge {
+            background: linear-gradient(90deg, #ffd700 0%, #ffed4e 100%);
+            color: #333;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+
+        .package-card h3 {
+            font-size: 1.8em;
+            color: #764ba2;
+            margin-bottom: 15px;
+        }
+
+        .package-card .price {
+            font-size: 3em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .package-card .price span {
+            font-size: 0.4em;
+            color: #888;
+        }
+
+        .package-card ul {
+            text-align: left;
+            list-style: none;
+            margin: 30px 0;
+            padding: 0;
+        }
+
+        .package-card ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            color: #555;
+        }
+
+        .package-card ul li:last-child {
+            border-bottom: none;
+        }
+
+        .package-card ul li::before {
+            content: '✓';
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Galería */
+        .gallery {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3em;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        /* Contacto */
+        .contact {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-item .icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+
+        .contact-item h3 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .contact-item p {
+            color: #cbd5e0;
+            line-height: 1.8;
+        }
+
+        .contact-item a {
+            color: #667eea;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: #764ba2;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 1000;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255,255,255,0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 20px;
+            z-index: 100;
+            display: none;
+        }
+
+        .navbar.visible {
+            display: block;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .logo-small {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .navbar nav a {
+            color: #333;
+            text-decoration: none;
+            margin-left: 30px;
+            transition: all 0.3s;
+        }
+
+        .navbar nav a:hover {
+            color: #667eea;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a202c;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer p {
+            color: #cbd5e0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 3em;
+            }
+
+            .hero h1 {
+                font-size: 1.8em;
+            }
+
+            .hero p {
+                font-size: 1.1em;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .section-title {
+                font-size: 2em;
+            }
+
+            .package-card .price {
+                font-size: 2.5em;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .whatsapp-float,
+            .navbar {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar" id="navbar">
+        <div class="container">
+            <div class="logo-small">FORO 7</div>
+            <nav>
+                <a href="#servicios">Servicios</a>
+                <a href="#paquetes">Paquetes</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="logo">FORO <span class="number">7</span></div>
+            <h1>Capturamos tus momentos más especiales</h1>
+            <p>Fotografía y Video Profesional para Bodas y XV Años en León, Guanajuato</p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/5214779203776?text=Hola,%20me%20interesa%20información%20sobre%20sus%20servicios" class="btn btn-primary">
+                    📱 Cotiza por WhatsApp
+                </a>
+                <a href="#paquetes" class="btn btn-secondary">
+                    💎 Ver Paquetes
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section class="services" id="servicios">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <p class="section-subtitle">Ofrecemos cobertura completa para tu evento especial</p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon">📸</div>
+                    <h3>Fotografía Profesional</h3>
+                    <p>Sesión previa, ceremonia y recepción. Fotos impresas de alta calidad y galería digital completa.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="icon">🎥</div>
+                    <h3>Video 4K</h3>
+                    <p>Película editada, musicalizada y titulada. Videoclip para proyectar en tu evento.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="icon">🚁</div>
+                    <h3>Dron 4K</h3>
+                    <p>Tomas aéreas espectaculares incluidas en todos nuestros paquetes premium.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="icon">💍</div>
+                    <h3>Bodas</h3>
+                    <p>Cobertura completa desde preparativos hasta la recepción. Capturamos cada detalle.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="icon">👑</div>
+                    <h3>XV Años</h3>
+                    <p>Sesión previa, misa y fiesta. Convertimos tu celebración en recuerdos inolvidables.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="icon">🌐</div>
+                    <h3>Invitación Web</h3>
+                    <p>Invitación digital personalizada, interactiva y con confirmación por WhatsApp.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Paquetes -->
+    <section class="packages" id="paquetes">
+        <div class="container">
+            <h2 class="section-title">Paquetes</h2>
+            <p class="section-subtitle">Elige el paquete perfecto para tu evento</p>
+
+            <div class="packages-grid">
+                <div class="package-card">
+                    <h3>Básico</h3>
+                    <div class="price">$3,500 <span>MXN</span></div>
+                    <ul>
+                        <li>Sesión fotográfica previa</li>
+                        <li>Cobertura evento (5 horas)</li>
+                        <li>50 fotos impresas 5×7"</li>
+                        <li>1 foto ampliada con marco</li>
+                        <li>Caja impresa de lujo</li>
+                        <li>Galería digital completa</li>
+                    </ul>
+                </div>
+
+                <div class="package-card featured">
+                    <div class="package-badge">⭐ MÁS POPULAR</div>
+                    <h3>Completo</h3>
+                    <div class="price">$6,500 <span>MXN</span></div>
+                    <ul>
+                        <li>Sesión previa + misa + 5h fiesta</li>
+                        <li>100 fotos impresas 5×7"</li>
+                        <li>Película USB 4K (3 horas)</li>
+                        <li>Videoclip para proyectar</li>
+                        <li>Dron 4K incluido</li>
+                        <li>Foto ampliada 40×50cm</li>
+                        <li>Cajas impresas de lujo</li>
+                        <li>Entrega digital completa</li>
+                    </ul>
+                </div>
+
+                <div class="package-card">
+                    <h3>Super Premium</h3>
+                    <div class="price">$8,500 <span>MXN</span></div>
+                    <ul>
+                        <li>Todo del paquete completo</li>
+                        <li>200 fotos impresas</li>
+                        <li>Película 4K de 5 horas</li>
+                        <li>7 horas de cobertura</li>
+                        <li>Foto ampliada 60×80cm</li>
+                        <li>Caja de madera premium</li>
+                        <li>Fotolibro de lujo</li>
+                        <li>Invitación web incluida</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <p style="font-size: 1.1em; color: #666; margin-bottom: 20px;">
+                    📦 <strong>Entrega:</strong> 30 días hábiles • 💳 <strong>Pago:</strong> 50% anticipo + 50% antes del evento
+                </p>
+                <a href="tarjeta-presentacion.html" class="btn btn-secondary" style="color: #667eea; border-color: #667eea; margin-right: 15px;">
+                    🃏 Ver Tarjeta de Presentación
+                </a>
+                <a href="flyer.html" class="btn btn-secondary" style="color: #667eea; border-color: #667eea;">
+                    📄 Ver Flyer Publicitario
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería Placeholder -->
+    <section class="gallery">
+        <div class="container">
+            <h2 class="section-title">Nuestro Trabajo</h2>
+            <p class="section-subtitle">Capturamos momentos que duran para siempre</p>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">📸</div>
+                <div class="gallery-item">💑</div>
+                <div class="gallery-item">👑</div>
+                <div class="gallery-item">🎥</div>
+                <div class="gallery-item">💍</div>
+                <div class="gallery-item">🎊</div>
+            </div>
+
+            <p style="text-align: center; margin-top: 30px; color: #666;">
+                <em>Galería de fotos reales disponible próximamente</em>
+            </p>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Contáctanos</h2>
+            <p class="section-subtitle" style="color: #cbd5e0;">Estamos listos para hacer de tu evento algo memorable</p>
+
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="icon">📱</div>
+                    <h3>WhatsApp</h3>
+                    <p>
+                        <a href="https://wa.me/5214779203776">477 920 3776</a>
+                    </p>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon">📧</div>
+                    <h3>Email</h3>
+                    <p>gvp260185@gmail.com</p>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon">📍</div>
+                    <h3>Dirección</h3>
+                    <p>Padilla 112<br>Cumbres de Arbide<br>León, Guanajuato</p>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon">💳</div>
+                    <h3>Cuenta Bancaria</h3>
+                    <p>BBVA<br>4152 3137 6890 8985<br>Juan Arturo Cruz</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 60px;">
+                <h3 style="font-size: 2em; margin-bottom: 20px;">¡Cotiza ahora y aparta tu fecha!</h3>
+                <a href="https://wa.me/5214779203776?text=Hola,%20me%20interesa%20información%20sobre%20sus%20paquetes" class="btn btn-primary">
+                    💬 Enviar WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Foro 7 - Fotografía & Video Profesional. Todos los derechos reservados.</p>
+            <p style="margin-top: 10px;">León, Guanajuato, México</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5214779203776?text=Hola,%20me%20interesa%20información%20sobre%20sus%20servicios" class="whatsapp-float" target="_blank">
+        💬
+    </a>
+
+    <script>
+        // Show/hide navbar on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('visible');
+            } else {
+                navbar.classList.remove('visible');
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

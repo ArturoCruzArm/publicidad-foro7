@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta de Presentación - Foro 7</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f0f0f0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .print-instructions {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .print-instructions h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .print-instructions ul {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+
+        .print-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-size: 1.1em;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+        }
+
+        .print-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Tarjeta */
+        .business-card {
+            width: 9cm;
+            height: 5cm;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            overflow: hidden;
+            page-break-after: always;
+        }
+
+        /* FRENTE - Diseño moderno con degradado */
+        .card-front {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1cm;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-front::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+
+        .card-front .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-front .logo .number {
+            font-size: 0.6em;
+            vertical-align: super;
+        }
+
+        .card-front .tagline {
+            font-size: 0.75em;
+            opacity: 0.95;
+            margin-top: 5px;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-front .services {
+            position: relative;
+            z-index: 1;
+            font-size: 0.7em;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .card-front .services div {
+            margin-bottom: 2px;
+        }
+
+        .card-front .camera-icon {
+            position: absolute;
+            right: 0.5cm;
+            bottom: 0.5cm;
+            font-size: 3em;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        /* REVERSO - Información de contacto */
+        .card-back {
+            background: white;
+            padding: 1cm;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .card-back::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .card-back .name {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .card-back .title {
+            font-size: 0.8em;
+            color: #667eea;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .card-back .contact-info {
+            font-size: 0.7em;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .card-back .contact-info div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .card-back .contact-info .icon {
+            width: 20px;
+            margin-right: 8px;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .card-back .social {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #e0e0e0;
+            font-size: 0.65em;
+            color: #888;
+        }
+
+        /* Estilos de impresión */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+
+            .print-instructions,
+            .print-button {
+                display: none !important;
+            }
+
+            .business-card {
+                box-shadow: none;
+                border-radius: 0;
+                page-break-after: always;
+                page-break-inside: avoid;
+            }
+
+            @page {
+                size: 9cm 5cm;
+                margin: 0;
+            }
+        }
+
+        .preview-label {
+            background: #667eea;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="print-instructions">
+        <h2>📋 Instrucciones para Imprimir</h2>
+        <ul>
+            <li><strong>Tamaño de tarjeta:</strong> 9 cm × 5 cm por cada lado</li>
+            <li><strong>Impresión doble cara:</strong> Configure su impresora para impresión a doble cara</li>
+            <li><strong>Papel recomendado:</strong> Papel couché de 300g o cartulina de alta calidad</li>
+            <li><strong>Configuración PDF:</strong> Al imprimir a PDF, seleccione "Tamaño personalizado" 9×5 cm</li>
+            <li><strong>Márgenes:</strong> Configure márgenes a 0 para impresión sin bordes</li>
+            <li><strong>Orientación:</strong> Horizontal (landscape)</li>
+        </ul>
+        <button class="print-button" onclick="window.print()">🖨️ Imprimir / Guardar como PDF</button>
+    </div>
+
+    <div class="preview-label">FRENTE DE LA TARJETA</div>
+    <div class="business-card card-front">
+        <div>
+            <div class="logo">
+                FORO <span class="number">7</span>
+            </div>
+            <div class="tagline">Capturamos tus momentos más especiales</div>
+        </div>
+        <div class="services">
+            <div>✦ Fotografía & Video Profesional</div>
+            <div>✦ Bodas & XV Años</div>
+            <div>✦ Servicio de Dron 4K</div>
+            <div>✦ Invitaciones Web</div>
+        </div>
+        <div class="camera-icon">📷</div>
+    </div>
+
+    <div class="preview-label">REVERSO DE LA TARJETA</div>
+    <div class="business-card card-back">
+        <div class="name">Arturo Cruz</div>
+        <div class="title">Fotografía & Producción Audiovisual</div>
+
+        <div class="contact-info">
+            <div>
+                <span class="icon">📱</span>
+                <span>477 920 3776</span>
+            </div>
+            <div>
+                <span class="icon">📧</span>
+                <span>gvp260185@gmail.com</span>
+            </div>
+            <div>
+                <span class="icon">📍</span>
+                <span>Padilla 112, Cumbres de Arbide, León, Gto.</span>
+            </div>
+        </div>
+
+        <div class="social">
+            WhatsApp: 477-920-3776 • Banco: BBVA 4152 3137 6890 8985
+        </div>
+    </div>
+
+    <div style="margin-top: 30px; text-align: center; color: #888; font-size: 0.9em;">
+        <p>💡 Consejo: Imprima esta página a PDF para obtener un archivo de alta calidad</p>
+        <p>que puede enviar a una imprenta profesional</p>
+    </div>
+</body>
+</html>

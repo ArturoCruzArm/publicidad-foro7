@@ -1,0 +1,209 @@
+# Publicidad Foro 7 - Material Promocional
+
+Material publicitario profesional para **Foro 7 - Fotografía & Video Profesional**.
+
+## 📁 Contenido del Repositorio
+
+### 1. **Tarjeta de Presentación Doble Cara** (`tarjeta-presentacion.html`)
+- **Tamaño:** 9 cm × 5 cm por cada lado
+- **Formato:** HTML listo para imprimir a PDF
+- **Frente:** Logo, eslogan y servicios principales
+- **Reverso:** Información de contacto completa
+
+### 2. **Flyer Publicitario** (`flyer.html`)
+- **Tamaño:** Carta (21.59 cm × 27.94 cm)
+- **Formato:** HTML optimizado para impresión
+- **Contenido:** Paquetes, servicios, precios y contacto
+
+### 3. **Página Web de Presentación** (`index.html`)
+- **Formato:** Sitio web completo y responsivo
+- **Secciones:**
+  - Hero con llamado a la acción
+  - Servicios detallados
+  - Paquetes con precios
+  - Galería (placeholder)
+  - Información de contacto
+  - Botón flotante de WhatsApp
+
+---
+
+## 🖨️ Cómo Imprimir a PDF
+
+### Tarjeta de Presentación
+
+1. Abrir `tarjeta-presentacion.html` en tu navegador
+2. Click en el botón "Imprimir / Guardar como PDF"
+3. En las opciones de impresión:
+   - **Destino:** Guardar como PDF
+   - **Tamaño:** Personalizado (9 cm × 5 cm)
+   - **Márgenes:** Ninguno (0)
+   - **Orientación:** Horizontal
+   - **Escala:** 100%
+4. Guardar el PDF
+
+**Impresión doble cara:**
+- Imprime primero el frente
+- Voltea el papel
+- Imprime el reverso en el mismo lado
+
+### Flyer Publicitario
+
+1. Abrir `flyer.html` en tu navegador
+2. Click en el botón "Imprimir / Guardar como PDF"
+3. En las opciones de impresión:
+   - **Destino:** Guardar como PDF
+   - **Tamaño:** Carta (Letter)
+   - **Márgenes:** Ninguno (0)
+   - **Orientación:** Vertical
+   - **Escala:** 100%
+4. Guardar el PDF
+
+---
+
+## 🎨 Recomendaciones de Impresión
+
+### Tarjetas de Presentación
+- **Papel:** Couché de 300g o cartulina de alta calidad
+- **Acabado:** Mate o brillante (según preferencia)
+- **Impresora:** Profesional para mejor calidad
+- **Cantidad sugerida:** 100-500 tarjetas
+
+### Flyer
+- **Papel:** Couché de 150-200g
+- **Acabado:** Brillante para mejor impacto visual
+- **Tamaño:** Carta estándar
+- **Cantidad sugerida:** 50-100 flyers
+
+---
+
+## 💼 Información del Negocio
+
+### Foro 7 - Fotografía & Video Profesional
+
+**Servicios:**
+- Fotografía profesional
+- Video 4K editado y musicalizado
+- Servicio de Dron 4K
+- Invitaciones web personalizadas
+- Cobertura de bodas y XV años
+
+**Contacto:**
+- **WhatsApp:** 477 920 3776
+- **Email:** gvp260185@gmail.com
+- **Dirección:** Padilla 112, Cumbres de Arbide, León, Guanajuato
+- **Cuenta BBVA:** 4152 3137 6890 8985 (Juan Arturo Cruz)
+
+---
+
+## 📊 Paquetes y Precios
+
+### Paquete Básico - $3,500 MXN
+- Sesión fotográfica previa
+- Cobertura evento (5 horas)
+- 50 fotos impresas 5×7"
+- 1 foto ampliada con marco
+- Caja impresa de lujo
+- Galería digital completa
+
+### Paquete Completo - $6,500 MXN ⭐ MÁS POPULAR
+- Sesión previa + misa + 5h fiesta
+- 100 fotos impresas 5×7"
+- Película USB 4K (3 horas)
+- Videoclip para proyectar
+- Dron 4K incluido
+- Foto ampliada 40×50cm
+- Cajas impresas de lujo
+- Entrega digital completa
+
+### Super Premium - $8,500 MXN
+- Todo del paquete completo
+- 200 fotos impresas
+- Película 4K de 5 horas
+- 7 horas de cobertura
+- Foto ampliada 60×80cm
+- Caja de madera premium
+- Fotolibro de lujo
+- Invitación web incluida
+
+### Servicios Adicionales
+- **Invitación Web:** $1,000 MXN
+- **Servicio de Dron:** $500 MXN (si no está incluido)
+- **Viáticos:** $500-$1,500 MXN (según distancia)
+
+---
+
+## 🌐 Uso de la Página Web
+
+### Publicar en Línea
+
+1. **GitHub Pages (Gratis):**
+   ```bash
+   git add .
+   git commit -m "Add marketing materials"
+   git push origin main
+   ```
+   - Ir a Settings → Pages
+   - Seleccionar rama main
+   - Tu sitio estará en: `https://tuusuario.github.io/publicidad-foro7`
+
+2. **Netlify (Gratis):**
+   - Arrastra la carpeta a netlify.com/drop
+   - Obtendrás un URL instantáneo
+
+3. **Hosting tradicional:**
+   - Subir todos los archivos HTML a tu servidor
+   - Configurar `index.html` como página principal
+
+---
+
+## 📱 Redes Sociales
+
+El material está optimizado para compartir en:
+- **Facebook:** Usar flyer como imagen de portada
+- **Instagram:** Screenshots de la página web o tarjetas
+- **WhatsApp Business:** Compartir PDFs directamente
+- **Email Marketing:** Adjuntar flyer en PDF
+
+---
+
+## ✅ Lista de Verificación para Impresión
+
+- [ ] Revisar todas las páginas en el navegador
+- [ ] Verificar que la información de contacto sea correcta
+- [ ] Imprimir una prueba en papel normal
+- [ ] Verificar márgenes y alineación
+- [ ] Imprimir versión final en papel de calidad
+- [ ] Revisar que los colores se vean bien
+- [ ] Cortar tarjetas con precisión (si aplica)
+
+---
+
+## 🛠️ Personalización
+
+Para modificar los archivos:
+
+1. Abre el archivo HTML en un editor de texto
+2. Busca la información que deseas cambiar
+3. Modifica el texto entre las etiquetas HTML
+4. Guarda y recarga en el navegador para ver cambios
+
+**Secciones comunes a modificar:**
+- Precios (buscar `$3,500`, `$6,500`, etc.)
+- Teléfono (buscar `477 920 3776`)
+- Email (buscar `gvp260185@gmail.com`)
+- Dirección (buscar `Padilla 112`)
+
+---
+
+## 📞 Soporte
+
+Para ayuda con el material publicitario, contacta a:
+- **WhatsApp:** 477 920 3776
+- **Email:** gvp260185@gmail.com
+
+---
+
+**Última actualización:** 14 de noviembre de 2025
+
+**Diseñado por:** Foro 7
+**Tecnología:** HTML5 + CSS3 (No requiere instalación)
