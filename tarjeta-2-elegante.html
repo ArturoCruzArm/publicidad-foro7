@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta Elegante - Foro 7</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: #f0f0f0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .instructions {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            font-family: Arial, sans-serif;
+        }
+
+        .print-button {
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-size: 1.1em;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .card {
+            width: 9cm;
+            height: 5cm;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            overflow: hidden;
+            page-break-after: always;
+        }
+
+        /* DISEÑO 2: ELEGANTE - Dorado y negro */
+        .card-front-2 {
+            background: #1a1a1a;
+            padding: 1cm;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #d4af37;
+            position: relative;
+        }
+
+        .card-front-2::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid #d4af37;
+        }
+
+        .card-front-2 .logo {
+            font-size: 2.5em;
+            font-weight: bold;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+            font-family: 'Georgia', serif;
+        }
+
+        .card-front-2 .divider {
+            width: 60px;
+            height: 1px;
+            background: #d4af37;
+            margin: 10px 0;
+        }
+
+        .card-front-2 .tagline {
+            font-size: 0.7em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* REVERSO 2 */
+        .card-back-2 {
+            background: white;
+            padding: 1cm;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border: 3px solid #1a1a1a;
+        }
+
+        .card-back-2 .name {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #1a1a1a;
+            text-align: center;
+            margin-bottom: 5px;
+            font-family: 'Georgia', serif;
+        }
+
+        .card-back-2 .title {
+            font-size: 0.7em;
+            color: #d4af37;
+            text-align: center;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card-back-2 .contact {
+            font-size: 0.65em;
+            color: #333;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        .card-back-2 .contact div {
+            margin: 3px 0;
+        }
+
+        .card-back-2 .divider-small {
+            width: 40px;
+            height: 1px;
+            background: #d4af37;
+            margin: 10px auto;
+        }
+
+        .preview-label {
+            background: #1a1a1a;
+            color: #d4af37;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            font-family: Arial, sans-serif;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+
+            .instructions,
+            .print-button,
+            .preview-label {
+                display: none !important;
+            }
+
+            .card {
+                box-shadow: none;
+                border-radius: 0;
+                page-break-after: always;
+            }
+
+            @page {
+                size: 9cm 5cm;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="instructions">
+        <h2>📋 Tarjeta Estilo 2: Elegante Dorada</h2>
+        <p><strong>Características:</strong> Negro con dorado, marco elegante, serif fonts, estilo premium</p>
+        <button class="print-button" onclick="window.print()">🖨️ Imprimir / Guardar PDF</button>
+    </div>
+
+    <div class="preview-label">FRENTE - Estilo Elegante</div>
+    <div class="card card-front-2">
+        <div class="logo">FORO 7</div>
+        <div class="divider"></div>
+        <div class="tagline">Fotografía & Video</div>
+    </div>
+
+    <div class="preview-label">REVERSO - Estilo Elegante</div>
+    <div class="card card-back-2">
+        <div class="name">Arturo Cruz</div>
+        <div class="title">Producción Audiovisual</div>
+        <div class="divider-small"></div>
+        <div class="contact">
+            <div>📱 477 920 3776</div>
+            <div>📍 Padilla 112, Cumbres de Arbide</div>
+            <div>León, Guanajuato</div>
+            <div style="margin-top: 8px; font-size: 0.9em;">
+                🌐 foro7.invitados.org<br>
+                📘 facebook.com/Foro7Prod<br>
+                📺 youtube.com/@Foro7
+            </div>
+        </div>
+    </div>
+</body>
+</html>

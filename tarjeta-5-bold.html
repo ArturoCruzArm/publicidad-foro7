@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta Bold - Foro 7</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f0f0f0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .instructions {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .print-button {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-size: 1.1em;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .card {
+            width: 9cm;
+            height: 5cm;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            overflow: hidden;
+            page-break-after: always;
+        }
+
+        /* DISEÑO 5: BOLD - Impactante y colorido */
+        .card-front-5 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            padding: 1cm;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .card-front-5::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.2) 0%, transparent 60%);
+        }
+
+        .card-front-5 .logo {
+            font-size: 3em;
+            font-weight: 900;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .card-front-5 .tagline {
+            font-size: 0.8em;
+            font-weight: 600;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .card-front-5 .services {
+            font-size: 0.6em;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            gap: 10px;
+        }
+
+        .card-front-5 .services span {
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* REVERSO 5 */
+        .card-back-5 {
+            background: white;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-back-5 .top-bar {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            padding: 12px 20px;
+            color: white;
+        }
+
+        .card-back-5 .name {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .card-back-5 .title {
+            font-size: 0.7em;
+            opacity: 0.95;
+        }
+
+        .card-back-5 .content {
+            padding: 15px 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card-back-5 .contact {
+            font-size: 0.7em;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .card-back-5 .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 5px 0;
+        }
+
+        .card-back-5 .contact-item .icon {
+            width: 20px;
+            font-size: 1.2em;
+        }
+
+        .card-back-5 .social-bar {
+            background: #f8f9fa;
+            padding: 8px 20px;
+            display: flex;
+            justify-content: space-around;
+            font-size: 0.6em;
+            color: #667eea;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .preview-label {
+            background: linear-gradient(135deg, #667eea 0%, #f093fb 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+
+            .instructions,
+            .print-button,
+            .preview-label {
+                display: none !important;
+            }
+
+            .card {
+                box-shadow: none;
+                border-radius: 0;
+                page-break-after: always;
+            }
+
+            @page {
+                size: 9cm 5cm;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="instructions">
+        <h2>📋 Tarjeta Estilo 5: Bold Impactante</h2>
+        <p><strong>Características:</strong> Colores vibrantes, degradados múltiples, diseño moderno y llamativo</p>
+        <button class="print-button" onclick="window.print()">🖨️ Imprimir / Guardar PDF</button>
+    </div>
+
+    <div class="preview-label">FRENTE - Estilo Bold</div>
+    <div class="card card-front-5">
+        <div class="logo">FORO 7</div>
+        <div class="tagline">Fotografía & Video</div>
+        <div class="services">
+            <span>4K</span>
+            <span>Dron</span>
+            <span>Web</span>
+        </div>
+    </div>
+
+    <div class="preview-label">REVERSO - Estilo Bold</div>
+    <div class="card card-back-5">
+        <div class="top-bar">
+            <div class="name">Arturo Cruz</div>
+            <div class="title">Producción Audiovisual</div>
+        </div>
+        <div class="content">
+            <div class="contact">
+                <div class="contact-item">
+                    <span class="icon">📱</span>
+                    <span>477 920 3776</span>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">📍</span>
+                    <span>Padilla 112, Cumbres de Arbide, León, Gto.</span>
+                </div>
+            </div>
+        </div>
+        <div class="social-bar">
+            <span>🌐 foro7.invitados.org</span>
+            <span>📘 /Foro7Prod</span>
+            <span>📺 @Foro7</span>
+        </div>
+    </div>
+</body>
+</html>

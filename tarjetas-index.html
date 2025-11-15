@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colección de Tarjetas - Foro 7</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .card-option {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .card-option:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        .card-preview {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4em;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-preview.moderna {
+            background: linear-gradient(135deg, white 0%, #f8f9fa 100%);
+            color: #667eea;
+        }
+
+        .card-preview.elegante {
+            background: #1a1a1a;
+            color: #d4af37;
+        }
+
+        .card-preview.creativa {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .card-preview.minimalista {
+            background: white;
+            color: #1a1a1a;
+        }
+
+        .card-preview.bold {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            color: white;
+        }
+
+        .card-preview.original {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .card-info {
+            padding: 25px;
+        }
+
+        .card-info h3 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .card-info p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .card-info .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .card-info .features span {
+            background: #f8f9fa;
+            color: #667eea;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+        }
+
+        .view-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .view-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .back-button {
+            background: white;
+            color: #667eea;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 30px;
+            transition: all 0.3s;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .tips {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+
+        .tips h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        .tips ul {
+            margin-left: 20px;
+            color: #666;
+            line-height: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Volver al sitio principal</a>
+
+        <div class="header">
+            <h1>📇 Colección de Tarjetas</h1>
+            <p>Elige el diseño perfecto para tu tarjeta de presentación</p>
+        </div>
+
+        <div class="cards-grid">
+            <!-- Tarjeta Original -->
+            <div class="card-option">
+                <div class="card-preview original">
+                    <span>📸</span>
+                </div>
+                <div class="card-info">
+                    <h3>Original</h3>
+                    <p>Diseño clásico con degradado morado, elegante y profesional</p>
+                    <div class="features">
+                        <span>Degradado</span>
+                        <span>Profesional</span>
+                        <span>Completo</span>
+                    </div>
+                    <a href="tarjeta-presentacion.html" class="view-button">Ver Diseño</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta 1 - Moderna -->
+            <div class="card-option">
+                <div class="card-preview moderna">
+                    <span>📷</span>
+                </div>
+                <div class="card-info">
+                    <h3>1. Moderna Minimalista</h3>
+                    <p>Fondo blanco limpio con barra lateral de color y ícono grande</p>
+                    <div class="features">
+                        <span>Minimalista</span>
+                        <span>Limpia</span>
+                        <span>Moderna</span>
+                    </div>
+                    <a href="tarjeta-1-moderna.html" class="view-button">Ver Diseño</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2 - Elegante -->
+            <div class="card-option">
+                <div class="card-preview elegante">
+                    <span>✨</span>
+                </div>
+                <div class="card-info">
+                    <h3>2. Elegante Dorada</h3>
+                    <p>Negro con dorado, marco elegante, estilo premium y sofisticado</p>
+                    <div class="features">
+                        <span>Lujosa</span>
+                        <span>Dorado</span>
+                        <span>Premium</span>
+                    </div>
+                    <a href="tarjeta-2-elegante.html" class="view-button">Ver Diseño</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3 - Creativa -->
+            <div class="card-option">
+                <div class="card-preview creativa">
+                    <span>🎨</span>
+                </div>
+                <div class="card-info">
+                    <h3>3. Creativa Diagonal</h3>
+                    <p>División diagonal, degradado moderno, diseño asimétrico y dinámico</p>
+                    <div class="features">
+                        <span>Creativa</span>
+                        <span>Asimétrica</span>
+                        <span>Moderna</span>
+                    </div>
+                    <a href="tarjeta-3-creativa.html" class="view-button">Ver Diseño</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta 4 - Minimalista -->
+            <div class="card-option">
+                <div class="card-preview minimalista">
+                    <span>▪</span>
+                </div>
+                <div class="card-info">
+                    <h3>4. Minimalista Ultra</h3>
+                    <p>Ultra limpio, espacios negativos, tipografía ligera, blanco y negro</p>
+                    <div class="features">
+                        <span>Minimalista</span>
+                        <span>B&N</span>
+                        <span>Espacios</span>
+                    </div>
+                    <a href="tarjeta-4-minimalista.html" class="view-button">Ver Diseño</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta 5 - Bold -->
+            <div class="card-option">
+                <div class="card-preview bold">
+                    <span>⚡</span>
+                </div>
+                <div class="card-info">
+                    <h3>5. Bold Impactante</h3>
+                    <p>Colores vibrantes, degradados múltiples, diseño moderno y llamativo</p>
+                    <div class="features">
+                        <span>Vibrante</span>
+                        <span>Impactante</span>
+                        <span>Colorido</span>
+                    </div>
+                    <a href="tarjeta-5-bold.html" class="view-button">Ver Diseño</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="tips">
+            <h2>💡 Consejos para Elegir tu Tarjeta</h2>
+            <ul>
+                <li><strong>Moderna Minimalista:</strong> Perfecta si buscas un estilo limpio y profesional sin saturación</li>
+                <li><strong>Elegante Dorada:</strong> Ideal para destacar exclusividad y lujo en eventos de alta gama</li>
+                <li><strong>Creativa Diagonal:</strong> Excelente para mostrar tu lado artístico y diferenciarte</li>
+                <li><strong>Minimalista Ultra:</strong> La mejor opción para un look sobrio y refinado</li>
+                <li><strong>Bold Impactante:</strong> Perfecta si quieres llamar la atención y ser memorable</li>
+                <li><strong>Original:</strong> Diseño balanceado que funciona para cualquier ocasión</li>
+            </ul>
+            <h2 style="margin-top: 30px;">🖨️ Impresión Recomendada</h2>
+            <ul>
+                <li><strong>Papel:</strong> Couché de 300g o superior</li>
+                <li><strong>Tamaño:</strong> 9 cm × 5 cm por lado</li>
+                <li><strong>Acabado:</strong> Mate para elegante/minimalista, Brillante para moderna/bold/creativa</li>
+                <li><strong>Cantidad mínima:</strong> 100 tarjetas</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
