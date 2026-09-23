@@ -141,33 +141,41 @@ El sistema verifica la fecha actual del navegador del visitante y compara con la
 
 ## 📊 Paquetes y Precios
 
-### Paquete Básico - $3,500 MXN
+### Paquete Esencial - $5,990 MXN
+- Cobertura de fotografía y video (hasta 5 horas)
+- Cobertura de ceremonia (si aplica)
+- Cobertura de recepción
+- Sesión fotográfica el mismo día del evento
+- Más de 500 fotografías digitales editadas
+- 50 fotografías impresas tamaño 5x7"
+- Película completa editada
+- USB personalizada
+- Ampliación 28x35 cm
+- Caja personalizada
+
+### Paquete Plus - $7,490 MXN ⭐ MÁS SOLICITADO
+- Todo lo del Paquete Esencial, más:
 - Sesión fotográfica previa
-- Cobertura evento (5 horas)
-- 50 fotos impresas 5×7"
-- 1 foto ampliada con marco
-- Caja impresa de lujo
-- Galería digital completa
+- Más de 800 fotografías digitales editadas
+- 100 fotografías impresas tamaño 5x7"
+- Videoclip cinematográfico
+- Video listo para proyectar en el salón
+- Ampliación 50x60 cm con marco
+- Caja Premium
 
-### Paquete Completo - $6,500 MXN ⭐ MÁS POPULAR
-- Sesión previa + misa + 5h fiesta
-- 100 fotos impresas 5×7"
-- Película USB 4K (3 horas)
-- Videoclip para proyectar
-- Dron 4K incluido
-- Foto ampliada 40×50cm
-- Cajas impresas de lujo
-- Entrega digital completa
-
-### Super Premium - $8,500 MXN
-- Todo del paquete completo
-- 200 fotos impresas
-- Película 4K de 5 horas
-- 7 horas de cobertura
-- Foto ampliada 60×80cm
+### Paquete Premium - $9,990 MXN
+- Cobertura completa de fotografía
+- Cobertura completa de video
+- Sesión fotográfica previa
+- Tomas aéreas con dron
+- Más de 1,200 fotografías digitales editadas
+- Fotolibro de lujo con 100 fotos ó 200 fotografías impresas
+- Videoclip cinematográfico
+- Video para proyectar en el salón
+- Ampliación 60x80 cm
+- USB personalizada
 - Caja de madera premium
-- Fotolibro de lujo
-- Invitación web incluida
+- Galería privada para descargar todas tus fotografías
 
 ### Servicios Adicionales
 - **Invitación Web:** $1,000 MXN
