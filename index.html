@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foro 7 - Fotografía & Video Profesional | León, Guanajuato</title>
+    <link rel="canonical" href="https://producciones-foro7.invitados.org/">
     <meta name="description" content="Fotografía y video profesional para bodas y XV años en León, Guanajuato. Servicio de dron 4K, invitaciones web y paquetes personalizados.">
     <style>
         * {
@@ -623,7 +624,7 @@
     <section class="hero">
         <div class="hero-content">
             <div class="logo">FORO <span class="number">7</span></div>
-            <h1>Capturamos tus momentos más especiales</h1>
+            <h1>Fotografía y video de bodas y XV años en León</h1>
             <p>Fotografía y Video Profesional para Bodas y XV Años en León, Guanajuato</p>
             <div class="cta-buttons">
                 <a href="https://wa.me/5214779203776?text=Hola,%20me%20interesa%20información%20sobre%20sus%20servicios" class="btn btn-primary">
@@ -658,7 +659,7 @@
                 <div class="service-card">
                     <div class="icon">🚁</div>
                     <h3>Dron 4K</h3>
-                    <p>Tomas aéreas espectaculares incluidas en todos nuestros paquetes premium.</p>
+                    <p>Tomas aéreas espectaculares: incluidas en el paquete Premium y disponibles como servicio adicional en los demás.</p>
                 </div>
 
                 <div class="service-card">
@@ -729,8 +730,7 @@
                     <div class="price">$9,990 <span>MXN</span></div>
                     <p style="color:#666;font-size:0.9em;margin-bottom:15px;">La experiencia más completa para conservar todos los recuerdos de tu evento.</p>
                     <ul>
-                        <li>Cobertura completa de fotografía</li>
-                        <li>Cobertura completa de video</li>
+                        <li>Cobertura completa de fotografía y video (todo el evento)</li>
                         <li>Sesión fotográfica previa</li>
                         <li>Tomas aéreas con dron</li>
                         <li>Más de 1,200 fotografías digitales editadas</li>
@@ -784,7 +784,7 @@
 
             <p style="text-align: center; margin-top: 30px; color: #666; font-size: 0.9em;">
                 🔒 Las invitaciones se desbloquean automáticamente después de la fecha del evento<br>
-                <em>Total de eventos: <span id="eventCount">0</span></em>
+                <em id="eventCountBox" style="display:none">Total de eventos: <span id="eventCount"></span></em>
             </p>
         </div>
     </section>
@@ -818,8 +818,8 @@
 
                 <div class="contact-item">
                     <div class="icon">💳</div>
-                    <h3>Cuenta Bancaria</h3>
-                    <p>BBVA<br>4152 3137 6890 8985<br>Juan Arturo Cruz</p>
+                    <h3>Apartado de fecha</h3>
+                    <p>Te enviamos los datos de pago<br>por WhatsApp al apartar tu fecha</p>
                 </div>
             </div>
 
@@ -947,7 +947,7 @@
 
             // Renderizar
             grid.innerHTML = filteredEvents.map(createEventCard).join('');
-            document.getElementById('eventCount').textContent = filteredEvents.length;
+            document.getElementById('eventCount').textContent = filteredEvents.length; document.getElementById('eventCountBox').style.display = filteredEvents.length ? '' : 'none';
         }
 
         // Filtros

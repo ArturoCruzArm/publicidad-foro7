@@ -135,7 +135,6 @@ El sistema verifica la fecha actual del navegador del visitante y compara con la
 - **WhatsApp:** 477 920 3776
 - **Email:** gvp260185@gmail.com
 - **Dirección:** Padilla 112, Cumbres de Arbide, León, Guanajuato
-- **Cuenta BBVA:** 4152 3137 6890 8985 (Juan Arturo Cruz)
 
 ---
 
